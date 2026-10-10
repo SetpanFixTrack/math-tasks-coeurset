@@ -14,6 +14,7 @@ jobs:
             01_dirichlet_principle/sheet_RU.tex
             01_dirichlet_principle/sheet_EN.tex
             01_dirichlet_principle/sheet_IT.tex
+          output_dir: 01_dirichlet_principle
 
       - name: Upload PDF Artifacts
         uses: actions/upload-artifact@v4
