@@ -1,0 +1,22 @@
+name: Compile LaTeX to PDF
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX documents
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            01_dirichlet_principle/sheet_RU.tex
+            01_dirichlet_principle/sheet_EN.tex
+            01_dirichlet_principle/sheet_IT.tex
+
+      - name: Upload PDF Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-sheets
+          path: 01_dirichlet_principle/*.pdf
